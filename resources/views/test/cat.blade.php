@@ -1,0 +1,1 @@
+<image src="{{ $cat }}" height="200" />

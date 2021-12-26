@@ -1,0 +1,1 @@
+<image src="{{ $bird }}" height="200" />
