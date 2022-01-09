@@ -103,4 +103,13 @@ Route::get( "/newgallery/bird" , [ MyProfileController::class , "bird" ] );
 
 Route::get( "/coronavirus" ,[ MyProfileController::class , "coronavirus" ] );
 
-Route::get('/covid19', [ Covid19Controller::class,"index" ]);
+//COVID19 ROUTE
+Route::resource('/covid19', Covid19Controller::class );
+
+// Route::get("/covid19/create",[ Covid19Controller::class , "create" ]);
+// Route::get("/covid19/{id}/edit", [ Covid19Controller::class , "edit" ]);
+// Route::get('/covid19', [ Covid19Controller::class,"index" ]);
+// Route::get('/covid19/{id}',[ Covid19Controller::class,'show' ]);
+// Route::post("/covid19",[ Covid19Controller::class , "store" ]);
+// Route::patch("/covid19/{id}", [ Covid19Controller::class , "update" ]);
+// Route::delete('/covid19/{id}', [ Covid19Controller::class , 'destroy' ]);
