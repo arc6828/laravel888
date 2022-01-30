@@ -67,16 +67,12 @@ Route::get("/gallery", function () {
 });
 
 //WEEK 3
-Route::middleware(['auth', 'role:admin,teacher,manager,finance'])->group(function () {
-    Route::get("/teacher", function () {
-        return view("teacher");
-    });
-
-    Route::get("/student", function () {
-        return view("student");
-    });
+Route::get("/teacher", function () {
+    return view("teacher");
 });
-
+Route::get("/student", function () {
+    return view("student");
+});
 Route::get("/theme", function () {
     return view("theme");
 });
@@ -98,19 +94,19 @@ Route::get('/tables', function () {
     return view('tables');
 });
 
-Route::get("/myprofile/create", [MyProfileController::class, "create"]);
-Route::get("/myprofile/{id}/edit", [MyProfileController::class, "edit"]);
-Route::get("/myprofile/{id}", [MyProfileController::class, "show"]);
+Route::get("/myprofile/create",[ MyProfileController::class , "create" ]);
+Route::get("/myprofile/{id}/edit", [ MyProfileController::class , "edit" ] );
+Route::get("/myprofile/{id}", [ MyProfileController::class , "show" ]);
 
 
-Route::get("/newgallery", [MyProfileController::class, "gallery"]);
-Route::get("/newgallery/ant", [MyProfileController::class, "ant"]);
-Route::get("/newgallery/bird", [MyProfileController::class, "bird"]);
+Route::get( "/newgallery" , [ MyProfileController::class , "gallery" ] );
+Route::get( "/newgallery/ant" , [ MyProfileController::class , "ant" ] );
+Route::get( "/newgallery/bird" , [ MyProfileController::class , "bird" ] );
 
-Route::get("/coronavirus", [MyProfileController::class, "coronavirus"]);
+Route::get( "/coronavirus" ,[ MyProfileController::class , "coronavirus" ] );
 
 //COVID19 ROUTE
-Route::resource('/covid19', Covid19Controller::class);
+Route::resource('/covid19', Covid19Controller::class );
 
 // Route::get("/covid19/create",[ Covid19Controller::class , "create" ]);
 // Route::get("/covid19/{id}/edit", [ Covid19Controller::class , "edit" ]);
@@ -121,7 +117,7 @@ Route::resource('/covid19', Covid19Controller::class);
 // Route::delete('/covid19/{id}', [ Covid19Controller::class , 'destroy' ]);
 
 
-Route::resource('/staff', StaffController::class);
+Route::resource('/staff', StaffController::class );
 
 // Route::get("/staff/create",[ StaffController::class , "create" ]);
 // Route::get("/staff/{id}/edit", [ StaffController::class , "edit" ]);
@@ -133,10 +129,3 @@ Route::resource('/staff', StaffController::class);
 
 // Route::resource('post', 'PostController');
 Route::resource('post', PostController::class);
-
-//โค้ดที่ Laravel Breeze ให้มา
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__ . '/auth.php';
