@@ -23,7 +23,7 @@
                         <br />
                         <br />
                         <div class="table-responsive">
-                            <table class="table d-none">
+                            <table class="table">
                                 <thead>
                                     <tr>
                                         <th>#</th>
@@ -63,7 +63,7 @@
                             </table>
                             <div class="pagination-wrapper"> {!! $product->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
-                        <div>
+                        <div class="d-none">
                             <div class="row">
                                 <style>
                                     .card-img-top {
